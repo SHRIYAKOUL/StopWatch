@@ -4,14 +4,18 @@ var sec=0;
 var count=0;
 var timer=false
 function start(){
-    timer=true;
-    stopwatch();
+    if(timer==false){
+        timer=true;
+        stopwatch();
+    }
 }
 function stop(){
-    timer=false;
+     if(timer==true){
+        timer=false;
+    }
 }
 function reset(){
-    timer=false;
+   timer=false;
     hour=0;
     min=0;
     sec=0;
@@ -19,16 +23,11 @@ function reset(){
     document.getElementById('hr').innerHTML="00";
     document.getElementById('min').innerHTML="00";
     document.getElementById('sec').innerHTML="00";
-    document.getElementById('count').innerHTML="00";
     
 }
 function stopwatch(){
     if(timer==true){
-        count=count+1;
-        if(count==100){
-            sec=sec+1;
-            count=0;
-        }      
+        sec=sec+1;
         if(sec==60){
             min=min+1;
             sec=0;
@@ -41,7 +40,7 @@ function stopwatch(){
         var hourStr=hour;
         var minStr=min;
         var secStr=sec;
-        var countStr=count;
+       
         if(hour<10){
             hourStr="0"+hourStr;
         }
@@ -51,13 +50,10 @@ function stopwatch(){
         if(sec<10){
             secStr="0"+secStr;
         }
-        if(count<10){
-            countStr="0"+countStr;
-        }
+        
         document.getElementById('hr').innerHTML=hourStr;
         document.getElementById('min').innerHTML=minStr;
         document.getElementById('sec').innerHTML=secStr;
-        document.getElementById('count').innerHTML=countStr;
-        setTimeout("stopwatch()",10);
+        setTimeout("stopwatch()",1000);
     }
 }
