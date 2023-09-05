@@ -19,6 +19,8 @@ body{
 .text{
     font-size: 1.5rem;
 }
+
+/* Styling Buttons */
 .button-container{
     text-align: center;
     margin-top: 40px;
@@ -44,6 +46,7 @@ body{
     background-color: rgba(243, 93, 55, 0.898);
     color:rgb(71, 21, 7);
 }
+/* Media queries for different screen sizes */
  @media all and (max-width:540px) {
     body{
         border:3px solid rgb(1, 29, 29);
