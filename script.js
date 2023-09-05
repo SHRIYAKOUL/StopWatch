@@ -1,30 +1,39 @@
+// Initializing variables.
 var hour=0;
 var min=0;
 var sec=0;
 var count=0;
+// Initializing timer(start timer) variable and set it to false.
 var timer=false
+// Start function
+// Executes when start button is clicked
 function start(){
     if(timer==false){
         timer=true;
+        // Call stopwatch function
         stopwatch();
     }
 }
+// Stop function
+// Executes when stop button is clicked
 function stop(){
      if(timer==true){
         timer=false;
     }
 }
+// Reset function
+// Executes when reset button is clicked
 function reset(){
-   timer=false;
+    timer=false;
     hour=0;
     min=0;
     sec=0;
-    count=0;
     document.getElementById('hr').innerHTML="00";
     document.getElementById('min').innerHTML="00";
     document.getElementById('sec').innerHTML="00";
     
 }
+// stopwatch function 
 function stopwatch(){
     if(timer==true){
         sec=sec+1;
